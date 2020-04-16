@@ -98,5 +98,11 @@ res/menu/menu_context_menu_list.xml
         return super.onContextItemSelected(item)
     }
 ```    
+## その他関連
+戻るメニュー
 
-
+```
+override fun onCreate(saveInstanceState: Bundle?) {
+    supportActionBar?.setDisplayHomeAsUpEnabled(true)
+}
+```
