@@ -2,6 +2,7 @@
 オプションメニューとコンテキストメニュー
 
 ## オプションメニュー
+アクションバーに表示されるメニュー
 
 ### レイアウト
 res/menu/menu_options_menu_list.xml
@@ -51,6 +52,7 @@ override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 ```
 
 ## コンテキストメニュー
+長押ししたときに表示されるメニュー
 
 ### レイアウト
 res/menu/menu_context_menu_list.xml
