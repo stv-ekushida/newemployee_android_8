@@ -40,15 +40,6 @@ override fun onCreateOptionsMenu(menu: Menu?): Boolean {
                 _menuList = createCurryList()
             }
         }
-        val lvMenu = findViewById<ListView>(R.id.lvMenu)
-        val adapter = SimpleAdapter(
-            applicationContext,
-            _menuList,
-            R.layout.row,
-            FROM,
-            TO
-        )
-        lvMenu.adapter = adapter
         return super.onOptionsItemSelected(item)
     }
 ```
