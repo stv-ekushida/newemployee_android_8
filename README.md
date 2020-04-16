@@ -43,3 +43,54 @@ override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         return super.onOptionsItemSelected(item)
     }
 ```
+
+## コンテキストメニュー
+
+### レイアウト
+res/menu/menu_context_menu_list.xml
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menuListContextDesc"
+        android:title="@string/menu_list_context_desc"/>
+
+    <item android:id="@+id/menuListContextOrder"
+        android:title="@string/menu_list_context_order"/>
+</menu>
+```
+
+### ソースコード
+```
+    //コンテキストメニューの作成
+    override fun onCreateContextMenu(
+        menu: ContextMenu?,
+        v: View?,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        menuInflater.inflate(R.menu.menu_context_menu_list, menu)
+        super.onCreateContextMenu(menu, v, menuInfo)
+    }
+
+    //コンテキストメニューを選択されたとき
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+
+        val info = item.menuInfo as AdapterView.AdapterContextMenuInfo
+        val listPostion = info.position
+        val menu = _menuList!![listPostion]
+
+        when(item.itemId) {
+            R.id.menuListContextDesc -> {
+                val desc = menu["desc"] as String
+                Toast.makeText(applicationContext, desc, Toast.LENGTH_LONG).show()
+            }
+            R.id.menuListContextOrder -> {
+                order(menu)
+            }
+        }
+        return super.onContextItemSelected(item)
+    }
+```    
+
+
