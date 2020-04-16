@@ -20,6 +20,12 @@ res/menu/menu_options_menu_list.xml
         android:title="@string/menu_list_options_curry"/>
 </menu>
 ```
+ | 属性値 | 内容 |
+ |---|---|
+ |never | オーバフローメニューに格納される |
+ |always | アクションバーに表示される |
+ |ifRoom | アクションバーに余裕があれば表示し、なければ、オーバフローメニューに格納される |
+
 
 ### ソースコード
 
